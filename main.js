@@ -97,14 +97,9 @@ mealsSearchBtn.addEventListener("click", () => {
             let mealInstructionElement = document.createElement('p');
             mealInstructionElement.textContent = meal.strInstructions;
             mealInstructionElement.style.top = "60px";
-            let MealVideoElement = document.createElement('a');
-            MealVideoElement.textContent = 'guide video';
-            MealVideoElement.setAttribute('href', meal.strYoutube);
-            MealVideoElement.style.backgroundColor = "#f00";
             let mealDiv = document.createElement('div');
             mealDiv.setAttribute('class', 'meal-div');
             mealDiv.appendChild(mealPic);
-            // mealDiv.appendChild(MealVideoElement);
             mealDiv.appendChild(mealNameElement);
             mealDiv.appendChild(mealInstructionElement);
             mealsPageSearch.appendChild(mealDiv);
