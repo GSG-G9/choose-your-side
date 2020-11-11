@@ -15,7 +15,7 @@ body {
 .container{
   background-color: rgba(255, 255, 255, 0.582);
   width: 900px;
-  height: 400px;
+  height: 600px;
   margin: 200px auto;
   text-align: center;
 	position: relative;
@@ -103,16 +103,20 @@ body {
     padding: 5px;
   }
   .recipe-search-result,.covid-search-result{
+    display: flex;
+    flex-wrap: wrap;
     width: 700px;
-    height: 270px;
+    height: 400px;
     position: absolute;
     top:120px;
     left: 40px;
     overflow: scroll;
   }
-.covid img ,.recipe img{
+.covid img.icon ,.recipe img.icon{
   position: absolute;
   right: 30px;
   top:20px;
 }
+
+
 /* End Recipe&covid pages */
