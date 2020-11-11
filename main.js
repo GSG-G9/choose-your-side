@@ -40,22 +40,39 @@ covidBtn.addEventListener('click' , ()=>{
 
 
 
-function xhrRequest(url, callback) {
-  const xhr = new XMLHttpRequest();
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        const response = JSON.parse(xhr.responseText);
-        callback(response);
-      }
-      //handle more status results
-    }
-  };
-  xhr.open("GET", url);
-  xhr.send();
-}
-
+CovidSearchBtn.addEventListener('click' , ()=>{
+    const covidValue = CovidSearchInput.value;
+    if(covidValue.length == 0){
+        let message = document.createElement('p');
+        message.textContent = "can't be empty";
+        CovidPageSearch.appendChild(message);}
+        else{
+            const covidUrl = `https://api.covid19api.com/live/country/${covidValue}`;
+            xhrRequest(covidUrl,(response)=>{
+                CovidPageSearch.textContent = "";
+                const covidCountey = document.createElement('p');
+                covidCountey.textContent = "The Country is :" + response[1].Country;
+                covidCountey.style.top = "80px";
+                CovidPageSearch.appendChild(covidCountey);
+                const covidDate = document.createElement('p');
+                covidDate.textContent = "The Date is :" + response[1].Date;
+                CovidPageSearch.appendChild(covidDate);
+                const covidDeath = document.createElement('p');
+                covidDeath.textContent = "Number Of Deaths is : " + response[1].Deaths;
+                covidDeath.style.top = "110px";
+                CovidPageSearch.appendChild(covidDeath);
+                const covidActive = document.createElement('p');
+                covidActive.textContent = "Number Of Active is : " + response[1].Active;
+                covidActive.style.top = "130px";
+                CovidPageSearch.appendChild(covidActive);
+                const covidRecoverd = document.createElement('p');
+                covidRecoverd.textContent = "Number Of Recovered is : " + response[1].Recovered;
+                covidRecoverd.style.top = "160px";
+                CovidPageSearch.appendChild(covidRecoverd);
+            });
+        }
+});
 mealsSearchBtn.addEventListener("click", () => {
   const mealValue = mealsSearchInput.value;
   if(mealValue.length == 0){
@@ -66,29 +83,33 @@ mealsSearchBtn.addEventListener("click", () => {
     const urlMeal = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealValue}`;
     xhrRequest(urlMeal, (response) => {
       mealsPageSearch.textContent = '';
-        let mealsArr = response.meals;
-        mealsArr.forEach(meal => {
+        let meal = response.meals[0];
+        
             let mealNameElement = document.createElement('p');
+            mealNameElement.style.top = "30px";
+            mealNameElement.style.left = "140px";
             mealNameElement.style.height = '100px';
             mealNameElement.textContent= meal.strMeal;
             let mealPic = document.createElement('img');
-            mealPic.style.width = '50px';
-            mealPic.style.height = '50px';
-            mealPic.setAttribute('src', meal.strMealThumb);
+             mealPic.style.width = '80px';
+            mealPic.style.height = '80px';
+            mealPic.style.left = "130px"; mealPic.setAttribute('src', meal.strMealThumb);
             let mealInstructionElement = document.createElement('p');
             mealInstructionElement.textContent = meal.strInstructions;
+            mealInstructionElement.style.top = "60px";
             let MealVideoElement = document.createElement('a');
             MealVideoElement.textContent = 'guide video';
             MealVideoElement.setAttribute('href', meal.strYoutube);
+            MealVideoElement.style.backgroundColor = "#f00";
             let mealDiv = document.createElement('div');
             mealDiv.setAttribute('class', 'meal-div');
+            mealDiv.appendChild(mealPic);
+            // mealDiv.appendChild(MealVideoElement);
             mealDiv.appendChild(mealNameElement);
             mealDiv.appendChild(mealInstructionElement);
-            mealDiv.appendChild(MealVideoElement);
-            mealDiv.appendChild(mealPic);
             mealsPageSearch.appendChild(mealDiv);
         });
-    });
+    
   }
 
 });
