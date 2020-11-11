@@ -2,29 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Food and Sports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Choose your side</title>
   </head>
   <body>
-    <div class="container">
-      <div class="first-page">
+    <!-- start intro page -->
+
+    <div class="first-page">
+      <div class="container">
+        <img src="assest/undraw_Questions_re_1fy7.svg" width="200px" />
         <h1>Welcome...</h1>
         <p class="wlc-intro">
-          whether you like food or sports, we do both...pick your side and go ?!
+          Whether you like Food or Covid-19, we do both...pick your side and go
+          ?!
         </p>
-        <input type="button" value="NBA" />
-        <input type="button" value="Recipe" />
-			</div>
-			<div class="NBA">
-				  <p>Find the NBA Team you want to know about </p>
-					<input type="text" placeholder="Enter Team Name">
-					<div class="NBA-search-result"></div>
-			</div>
-			<div class="Recipe">
-				<p>Find Recipe to do with your ingredients</p>
-				<input type="text" placeholder="Enter an ingredient">
-				<div class="NBA-search-result"> </div>
-		</div>
+        <input type="button" value="Covid-19" class="covid-btn" />
+        <input type="button" value="Recipe" class="recipe-btn" />
+      </div>
     </div>
+
+    <!-- End intro page -->
+    <!-- Strat Covid-19 -->
+
+    <div class="covid">
+      <div class="container">
+        <img src="assest/soap.png" width="80px" />
+        <p>Find covid-19 status in any country</p>
+        <input type="text" placeholder="Enter Country Name" />
+        <div class="covid-search-result"></div>
+        <input type="button" value="Search" />
+        <input type="button" value="main" class="main-btn" id="main-covid" />
+      </div>
+    </div>
+
+    <!-- End covid-19  -->
+    <!-- start Recipe -->
+
+    <div class="recipe">
+      <div class="container">
+        <img src="assest/undraw_cooking_lyxy.svg" width="80px" />
+        <p>Find Recipe to do with your Meal name</p>
+        <input type="text" placeholder="Enter an meal" />
+        <input type="button" value="Search" />
+        <div class="recipe-search-result"></div>
+        <input type="button" value="main" class="main-btn" id="main-recipe" />
+      </div>
+    </div>
+    <!-- End Recipe-->
+
+    <script src="main.js"></script>
   </body>
 </html>
