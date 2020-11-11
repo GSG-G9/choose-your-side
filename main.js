@@ -69,11 +69,12 @@ mealsSearchBtn.addEventListener("click", () => {
         let mealsArr = response.meals;
         mealsArr.forEach(meal => {
             let mealNameElement = document.createElement('p');
+            mealNameElement.style.height = '100px';
             mealNameElement.textContent= meal.strMeal;
             let mealPic = document.createElement('img');
+            mealPic.style.width = '50px';
+            mealPic.style.height = '50px';
             mealPic.setAttribute('src', meal.strMealThumb);
-            let mealCategoryElement = document.createElement('p');
-            mealCategoryElement.textContent = meal.strCategory;
             let mealInstructionElement = document.createElement('p');
             mealInstructionElement.textContent = meal.strInstructions;
             let MealVideoElement = document.createElement('a');
@@ -82,7 +83,6 @@ mealsSearchBtn.addEventListener("click", () => {
             let mealDiv = document.createElement('div');
             mealDiv.setAttribute('class', 'meal-div');
             mealDiv.appendChild(mealNameElement);
-            mealDiv.appendChild(mealCategoryElement);
             mealDiv.appendChild(mealInstructionElement);
             mealDiv.appendChild(MealVideoElement);
             mealDiv.appendChild(mealPic);
