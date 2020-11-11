@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Food and Sports</title>
   </head>
   <body>
@@ -12,19 +13,34 @@
         <p class="wlc-intro">
           whether you like food or sports, we do both...pick your side and go ?!
         </p>
-        <input type="button" value="NBA" />
-        <input type="button" value="Recipe" />
-			</div>
-			<div class="NBA">
-				  <p>Find the NBA Team you want to know about </p>
-					<input type="text" placeholder="Enter Team Name">
-					<div class="NBA-search-result"></div>
-			</div>
-			<div class="Recipe">
-				<p>Find Recipe to do with your ingredients</p>
-				<input type="text" placeholder="Enter an ingredient">
-				<div class="NBA-search-result"> </div>
-		</div>
+        <input type="button" value="NBA" id="nbaBtn" />
+        <input type="button" value="Recipe" id="recipeBtn" />
+      </div>
+      <div class="content">
+        <div class="nba hide">
+          <p>Find the NBA Team you want to know about</p>
+          <input
+            type="text"
+            placeholder="Enter Team Name"
+            id="nbaSearchInput"
+          />
+          <input type="button" value="Search" id="nba-search-btn" />
+
+          <div class="nba-search-result"></div>
+        </div>
+        <div class="recipe hide">
+          <p>Find Recipe to do with your ingredients</p>
+          <input
+            type="text"
+            placeholder="Enter an ingredient"
+            id="recipeSearchInput"
+          />
+          <input type="button" value="Search" id="recipe-search-btn" />
+
+          <div class="recipe-search-result"></div>
+        </div>
+      </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
