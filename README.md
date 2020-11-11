@@ -1,9 +1,5 @@
 # choose-your-side
 
-Visit this **[Link](https://gsg-g9.github.io/HAAI-Ecommerce-APP)** to view our App
-
----
-
 ### Team members:-
 
 - Ahmed Eid
@@ -26,11 +22,11 @@ whatever you choose takes you to another page.
 
 #### Meals Page
 
-Here you will find a search bar to enter----
+Here you will find a search bar to enter the meal type you want to look for recipes for
 
 #### COVID Page
 
-Here you will find a search bar to look for----
+Here you will find a search bar to look for the country you want to know Covid statistics about
 
 ### How We Do this :-
 
