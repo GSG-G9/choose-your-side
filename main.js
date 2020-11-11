@@ -43,20 +43,21 @@ function covidSearch(response) {
   covidCountey.style.top = "80px";
   CovidPageSearch.appendChild(covidCountey);
   const covidDate = document.createElement("p");
+  covidDate.style.top = "110px";
   covidDate.textContent = "The Date is :" + response[1].Date;
   CovidPageSearch.appendChild(covidDate);
   const covidDeath = document.createElement("p");
-  covidDeath.textContent = "Number Of Deaths is : " + response[1].Deaths;
-  covidDeath.style.top = "110px";
+  covidDeath.style.top = "140px";
+  covidDeath.textContent = "Number Of Deaths is:" + response[1].Deaths;
   CovidPageSearch.appendChild(covidDeath);
   const covidActive = document.createElement("p");
   covidActive.textContent = "Number Of Active is : " + response[1].Active;
-  covidActive.style.top = "130px";
+  covidActive.style.top = "170px";
   CovidPageSearch.appendChild(covidActive);
   const covidRecoverd = document.createElement("p");
   covidRecoverd.textContent =
     "Number Of Recovered is : " + response[1].Recovered;
-  covidRecoverd.style.top = "160px";
+  covidRecoverd.style.top = "200px";
   CovidPageSearch.appendChild(covidRecoverd);
 }
 
