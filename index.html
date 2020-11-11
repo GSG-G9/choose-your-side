@@ -3,44 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Food and Sports</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Choose your side</title>
   </head>
   <body>
-    <div class="container">
-      <div class="first-page">
+    <!-- start intro page -->
+    
+    <div class="first-page">
+      <div class="container">
+        <img src="assest/undraw_Questions_re_1fy7.svg" width="200px" />
         <h1>Welcome...</h1>
         <p class="wlc-intro">
-          whether you like food or sports, we do both...pick your side and go ?!
+          Whether you like Food or Covid-19, we do both...pick your side and go
+          ?!
         </p>
-        <input type="button" value="NBA" id="nbaBtn" />
-        <input type="button" value="Recipe" id="recipeBtn" />
-      </div>
-      <div class="content">
-        <div class="nba hide">
-          <p>Find the NBA Team you want to know about</p>
-          <input
-            type="text"
-            placeholder="Enter Team Name"
-            id="nbaSearchInput"
-          />
-          <input type="button" value="Search" id="nba-search-btn" />
-
-          <div class="nba-search-result"></div>
-        </div>
-        <div class="recipe hide">
-          <p>Find Recipe to do with your ingredients</p>
-          <input
-            type="text"
-            placeholder="Enter an ingredient"
-            id="recipeSearchInput"
-          />
-          <input type="button" value="Search" id="recipe-search-btn" />
-
-          <div class="recipe-search-result"></div>
-        </div>
+        <input type="button" value="Covid-19" class="covid-btn" id="covidBtn"/>
+        <input type="button" value="Recipe" class="recipe-btn" id="recipeBtn"/>
       </div>
     </div>
+      
+        <div class="covid">
+          <div class="container">
+            <img src="assest/soap.png" width="80px" />
+            <p>Find covid-19 status in any country</p>
+            <input type="text" placeholder="Enter Country Name" id="covidSearchResult" />
+            <div class="covid-search-result"></div>
+            <input type="button" value="Search" id="covid-search-btn"/>
+            <input type="button" value="main" class="main-btn" id="main-covid" />
+          </div>
+        </div>
+
+        <div class="recipe">
+          <div class="container">
+            <img src="assest/undraw_cooking_lyxy.svg" width="80px" />
+            <p>Find Recipe to do with your Meal name</p>
+            <input type="text" placeholder="Enter an meal" id="mealSearchInput"/>
+            <input type="button" value="Search" id="meal-search-btn"/>
+            <div class="recipe-search-result"></div>
+            <input type="button" value="main" class="main-btn" id="main-recipe" />
+          </div>
+        </div>
+
+      
     <script src="./main.js"></script>
   </body>
 </html>
