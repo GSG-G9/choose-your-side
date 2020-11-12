@@ -38,7 +38,6 @@ mainCovidBtn.addEventListener("click", () => {
 });
 
 function covidSearch(response) {
-  CovidPageSearch.textContent = "";
   const covidCountey = document.createElement("p");
   covidCountey.textContent = "The Country is :" + response[1].Country;
   covidCountey.style.top = "80px";
@@ -63,21 +62,22 @@ function covidSearch(response) {
 }
 
 CovidSearchBtn.addEventListener("click", () => {
-  const covidValue = CovidSearchInput.value;
+  const covidValue = CovidSearchInput.value.trim();
+  CovidPageSearch.textContent = "";
   if (covidValue.length == 0) {
     let message = document.createElement("p");
     message.textContent = "can't be empty";
     CovidPageSearch.appendChild(message);
-  } else {
-    const covidUrl = `https://api.covid19api.com/live/country/${covidValue}`;
+  } 
+  else {
+    const covidUrl = `https://api.covid19api.com/total/dayone/country/${covidValue}`;
     xhrRequest(covidUrl, (response) => {
       covidSearch(response);
     });
   }
 });
 function mealSearch(response) {
-  mealsPageSearch.textContent = "";
-  let meal = response.meals[0];
+   let meal = response.meals[0];
   let mealNameElement = document.createElement("p");
   mealNameElement.style.top = "30px";
   mealNameElement.style.left = "140px";
@@ -100,6 +100,7 @@ function mealSearch(response) {
 }
 mealsSearchBtn.addEventListener("click", () => {
   const mealValue = mealsSearchInput.value;
+  mealsPageSearch.textContent = "";
   if (mealValue.length == 0) {
     let message = document.createElement("p");
     message.textContent = "can't be empty";
